@@ -7,6 +7,7 @@ import clsx from "clsx";
 
 import { links } from "@/lib/constant";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { ModeToggle } from "./ModeToggle";
 
 export default function Header() {
   const router = useRouter();
@@ -108,6 +109,7 @@ export default function Header() {
             </motion.li>
           ))}
         </ul>
+        <ModeToggle/>
       </nav>
     </header>
   );

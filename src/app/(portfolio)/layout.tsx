@@ -1,13 +1,8 @@
 
-
-
-
 import Footer from '@/components/shared/footer/Footer'
 import GoToTop from '@/components/shared/goToTop/GoToTop'
 import Header from '@/components/shared/header/Header'
-import ActiveSectionContextProvider, { ActiveSectionContext } from '@/context/active-section-context'
 import React from 'react'
-
 export default function RootLayout({
   children,
 }: {
