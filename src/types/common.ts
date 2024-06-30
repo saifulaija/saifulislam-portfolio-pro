@@ -12,11 +12,11 @@ export type UserRole = keyof typeof USER_ROLE;
 
 
 
-export interface IHeaderItem {
-  title: string;
-  path?: string ;
-  subMenu?: IHeaderItem[]; 
-}
+export type MenuItem = {
+  label: string;
+  path: string;
+  show: boolean;
+};
 export type ResponseSuccessType = {
   data: any;
   meta?: IMeta;
