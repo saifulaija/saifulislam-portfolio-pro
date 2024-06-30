@@ -7,6 +7,7 @@ import { Poppins as FontSans } from 'next/font/google'
 import Providers from "@/lib/providers/providers";
 import { ThemeProvider } from "@/lib/providers/theme-provider";
 import { Toaster } from "@/components/ui/toaster"
+import ActiveSectionContextProvider from "@/context/active-section-context";
 
 
 const fontSans = FontSans({
@@ -31,18 +32,20 @@ export default function RootLayout({
         fontSans.variable
       )}>
 
-        <Providers>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-
-            {children}
-          </ThemeProvider>
-        </Providers>
-        <Toaster />
+        <ActiveSectionContextProvider>
+          <Providers>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+  
+              {children}
+            </ThemeProvider>
+          </Providers>
+          <Toaster />
+        </ActiveSectionContextProvider>
       </body>
     </html>
   );
